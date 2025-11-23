@@ -1,7 +1,7 @@
 <?php 
 
 $servername = "localhost";
-$database = "pwd_2441919016";
+$database = "techgear_db";
 $username = "root";
 $password = "";
 
@@ -11,5 +11,7 @@ if(!$conn){
     die("Koneksi gagal: ". mysqli_connect_error());
 };
 
+
+echo "Berhasil koneksi anjay"
 
 ?>

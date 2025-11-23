@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechGear Store</title>
-    <link rel="icon" href="img/icon.png">
+    <link rel="icon" href="/projek-uas/assets/img/icon.png">
 
     <!--link css - cdn -->
     <link rel="stylesheet" href="/projek-uas/assets/css/global.css">

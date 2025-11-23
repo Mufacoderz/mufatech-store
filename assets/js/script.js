@@ -1,76 +1,88 @@
-// SCRIPT GLOBAL
+// NAVBAR (Global)
+const nav = document.querySelector('.nav-list');
+const open = document.querySelector('.open');
+const close = document.querySelector('.close');
 
-// utk nav
-const nav = document.querySelector('.nav-list')
-const open = document.querySelector('.open')
-const close = document.querySelector('.close')
-
-
-function handlerHamburger() {
-    nav.classList.toggle('active')
-    if (nav.classList.contains('active')) {
-        open.style.display = 'none'
-        close.style.display = 'block'
-    } else {
-        open.style.display = 'block'
-        close.style.display = 'none'
-    }
-}
-
-open.addEventListener('click', handlerHamburger)
-close.addEventListener('click', handlerHamburger)
-
-// untk footer
-document.querySelector('#year').textContent = new Date().getFullYear()
-
-
-// SCRIPT UTK PRODUCT.HTML
-
-if (window.location.pathname.endsWith("product.html")) {
-
-    const category = document.querySelector('.categories')
-    const openCategory = document.querySelector('.openCategory')
-    const closeCategory = document.querySelector('.closeCategory')
-    const closeCategoryList = document.querySelectorAll('.list-category')
-
-    function handlerCategory() {
-        category.classList.toggle('active')
-        if (category.classList.contains('active')) {
-            openCategory.style.display = 'none'
-            closeCategory.style.display = 'block'
+if (open && close && nav) {
+    function handlerHamburger() {
+        nav.classList.toggle('active');
+        if (nav.classList.contains('active')) {
+            open.style.display = 'none';
+            close.style.display = 'block';
         } else {
-            openCategory.style.display = 'block'
-            closeCategory.style.display = 'none'
+            open.style.display = 'block';
+            close.style.display = 'none';
         }
     }
 
-    closeCategoryList.forEach(e => {
-        e.addEventListener('click', () => {
-            category.classList.remove('active')
-            openCategory.display = 'block'
-            closeCategory.display = 'none'
-        })
-    })
-
-    openCategory.addEventListener('click', handlerCategory)
-    closeCategory.addEventListener('click', handlerCategory)
+    open.addEventListener('click', handlerHamburger);
+    close.addEventListener('click', handlerHamburger);
+}
 
 
-    //fungsi utk render data produks
-    function renderProducts(data, containerId) {
-        const container = document.getElementById(containerId)
-        container.innerHTML = data.map(item => `
-            <div class="product-card">
-                <img src="${item.image}" alt="${item.name}" width="150">
-                <h3>${item.name}</h3>
-                <p>Rp ${item.price.toLocaleString('id-ID')}</p>
-                <div>
-                    <button class="cart-btn">Add to cart <i class="fa-solid fa-cart-shopping"></i></button>
-                </div>
-            </div>
-    `).join("")
+// FOOTER (Global)
+const yearSpan = document.querySelector('#year');
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+}
+
+
+
+// SCRIPT KHUSUS PRODUCT PAGE (Dijalankan hanya jika elemen ada)
+if (document.querySelector('.categories')) {
+
+    const category = document.querySelector('.categories');
+    const openCategory = document.querySelector('.openCategory');
+    const closeCategory = document.querySelector('.closeCategory');
+    const categoryItems = document.querySelectorAll('.list-category');
+
+    function handlerCategory() {
+        category.classList.toggle('active');
+        if (category.classList.contains('active')) {
+            openCategory.style.display = 'none';
+            closeCategory.style.display = 'block';
+        } else {
+            openCategory.style.display = 'block';
+            closeCategory.style.display = 'none';
+        }
     }
 
+    categoryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            category.classList.remove('active');
+            openCategory.style.display = 'block';
+            closeCategory.style.display = 'none';
+        });
+    });
+
+    openCategory.addEventListener('click', handlerCategory);
+    closeCategory.addEventListener('click', handlerCategory);
+}
+
+
+
+// RENDER PRODUK (Aman, hanya jalan jika elemennya ada)
+function renderProducts(data, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = data.map(item => `
+        <div class="product-card">
+            <img src="${item.image}" alt="${item.name}" width="150">
+            <h3>${item.name}</h3>
+            <p>Rp ${item.price.toLocaleString('id-ID')}</p>
+            <div>
+                <button class="cart-btn">
+                    Add to cart <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+        </div>
+    `).join("");
+}
+
+
+// Jalankan render hanya jika data dan element ada
+if (typeof keyboards !== "undefined") {
     renderProducts(keyboards, "keyboard-list");
     renderProducts(mouses, "mouse-list");
     renderProducts(monitors, "monitor-list");
@@ -78,7 +90,4 @@ if (window.location.pathname.endsWith("product.html")) {
     renderProducts(headphones, "headphone-list");
     renderProducts(chairs, "chair-list");
     renderProducts(accessories, "accessories-list");
-
-
 }
-

@@ -123,13 +123,14 @@ nav h1 a{
 }
 
 header nav .nav-right .btn-login-logout {
+    font-size: 20px;
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
     background-color: var(--color-primary);
     border-radius: 50%;
-    padding: 9px;
+    padding: 10px;
 }
 
 header nav .nav-right .btn-login-logout:hover {
@@ -218,7 +219,7 @@ footer{
         display: none;
     }
 
-    .cart{
+    .cart, .btn-login-logou{
         font-size:15px;
         padding: 8px;
     }

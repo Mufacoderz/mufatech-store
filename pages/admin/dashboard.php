@@ -6,7 +6,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="id">
 
@@ -15,26 +14,21 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>
     <link rel="stylesheet" href="../../assets/css/adminStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
-
-    <div class="sidebar">
-        <h2>Admin Panel</h2>
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">User</a></li>
-            <li><a href="#">Berita</a></li>
-            <li><a href="#">Galeri</a></li>
-            <li><a href="logout.php" class="logout">Logout</a></li>
-        </ul>
-    </div>
+    <?php include 'sidebar.php'; ?>
 
     <div class="main-content">
         <header>
             <h1>Selamat Datang, <?php echo $_SESSION['nama_lengkap']; ?>!</h1>
             <p>Anda sedang berada di halaman dashboard utama.</p>
-            <!-- <button>☰ Menu</button> -->
         </header>
 
         <section class="cards">
@@ -43,13 +37,14 @@ if (!isset($_SESSION['user_id'])) {
                 <p>120</p>
             </div>
             <div class="card">
-                <h3>Total Berita</h3>
+                <h3>Total Produk</h3>
                 <p>45</p>
             </div>
             <div class="card">
                 <h3>Total Galeri</h3>
                 <p>82</p>
             </div>
-
         </section>
     </div>
+</body>
+</html>

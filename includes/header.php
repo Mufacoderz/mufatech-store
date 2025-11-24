@@ -11,10 +11,10 @@ session_start();
         </h1>
 
         <ul class="nav-list">
-            <li><a href="index.php">Beranda</a></li>
-            <li><a href="pages/product.php">Produk</a></li>
-            <li><a href="pages/ideas.php">Ide Setup</a></li>
-            <li><a href="pages/contact.php">Kontak</a></li>
+            <li><a href="/projek-uas/index.php">Beranda</a></li>
+            <li><a href="/projek-uas/pages/product.php">Produk</a></li>
+            <li><a href="/projek-uas/pages/ideas.php">Ide Setup</a></li>
+            <li><a href="/projek-uas/pages/contact.php">Kontak</a></li>
         </ul>
 
         <div class="nav-right">
@@ -27,7 +27,7 @@ session_start();
             </div>
 
             <?php if(isset($_SESSION['user_id'])): ?>
-                <a href="logout.php" class="btn-login-logout"><i class="fa-solid fa-user"></i></a>
+                <a href="/projek-uas/logout.php" class="btn-login-logout"><i class="fa-solid fa-user"></i></a>
             <?php else: ?>
                 <a href="login.php" class="btn-login-logout"><i class="fa-solid fa-user"></i></a>
             <?php endif; ?>

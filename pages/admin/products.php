@@ -1,22 +1,13 @@
 <?php
 session_start();
-include '../../config/koneksi.php';  // koneksi DB
+include '../../config/koneksi.php'; 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Product</title>
-    <link rel="stylesheet" href="../../assets/css/adminStyles.css">
-    <link rel="stylesheet" href="../../assets/css/product.css">
-</head>
+<?php include'metaAdmin.php';?>
 
 <body>
 
@@ -28,6 +19,8 @@ if (!isset($_SESSION['user_id'])) {
     </div>
     <script src="/projek-uas/assets/js/data.js"></script>
     <script src="/projek-uas/assets/js/script.js"></script>
+    <script src="/projek-uas/assets/js/scriptAdmin.js"></script>
+
 </body>
 
 </html>

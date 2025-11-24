@@ -135,6 +135,12 @@ footer{
     cursor: pointer;
 }
 
+footer p .login{
+    text-decoration: none;
+    margin-left: 5px;
+    color: #ccc;
+}
+
 
 
 

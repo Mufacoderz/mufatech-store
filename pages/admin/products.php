@@ -15,7 +15,13 @@ if (!isset($_SESSION['user_id'])) {
 <?php include 'sidebar.php'; ?>
 
 
-    <div class="main-content">
+    <div class="main-content" id="top">
+        <div class="add-product">
+            <h3>Tambah produk</h3>
+            <div class="add-product-btn">
+                <p>+</p>
+            </div>
+        </div>
         <?php include __DIR__ . '/../../includes/listProducts.php'; ?>
     </div>
 

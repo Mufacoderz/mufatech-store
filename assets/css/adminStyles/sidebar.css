@@ -1,3 +1,12 @@
+:root {
+    --color-primary: #22d3ee;
+    --color-primary-hover: #a1e9f4;
+    --color-secondary: #2c2c2c;
+    --color-tertiary: #1A1A1A;
+    --color-text: #fff;
+}
+
+
 
 .hamburger-btn{
     display: none;

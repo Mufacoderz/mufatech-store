@@ -20,6 +20,6 @@
             <h2>Aksesoris / Lainnya</h2>
             <div id="accessories-list"></div>
 
-            <a href="#product"><i class="fa-solid fa-arrow-up"></i></a>
+            <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
 
         </section>

@@ -1,4 +1,49 @@
+:root {
+    --color-primary: #22d3ee;
+    --color-primary-hover: #a1e9f4;
+    --color-secondary: #2c2c2c;
+    --color-tertiary: #1A1A1A;
+    --color-text: #fff;
+}
 
+*{
+    scroll-behavior: smooth;
+}
+
+h1,h2,h3 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.main-content .add-product{
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+.add-product-btn{
+    color: var(--color-primary);
+    padding: 50px;
+    background: var(--color-secondary);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-product-btn:hover{
+    background-color: #4f4f4f;
+}
+
+.add-product-btn p{
+    transition: 0.3s;
+}
+.add-product-btn:hover p{
+    transform: scale(2);
+}
 
 
 .admin-product-card {
@@ -15,24 +60,46 @@
 }
 
 .admin-product-card:hover {
-    border-color: #22d3ee;
+    border-color: var(--color-primary);
     box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
 }
 
-.admin-product-card button{
-
-    color: red;
-    background-color: transparent;
+.admin-product-card .button {
     position: absolute;
-    top: 6px;
-    right: 0;
-    border: none;
-    transition: 0.3s;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
 }
 
-.admin-product-card button:hover{
-    color: var(--color-primary);
+.admin-product-card .button button {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #141414;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: 16px;
 }
+
+.admin-product-card .button button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+.admin-product-card .button .edit {
+    color: #05ff05;
+}
+
+.admin-product-card .button .delete {
+    color: #ff3b3b;
+}
+
+
 
 .admin-product-card img {
     width: 80px;
@@ -50,6 +117,11 @@
 .admin-product-info .price {
     margin: 5px 0 0;
     font-size: 14px;
-    color: #22d3ee;
+    color: var(--color-primary);
     font-weight: 600;
+}
+
+
+.list-product-section a{
+    color: var(--color-primary);
 }

@@ -60,14 +60,16 @@ if (document.querySelector('.categories')) {
 
 
 
+// render produk
+
 function renderProducts(data, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
     container.innerHTML = data.map(item => `
         <div class="product-card">
-            <img src="${item.image}" alt="${item.name}" width="150">
-            <h3>${item.name}</h3>
+            <img src="${item.image}" alt="${item.product_name}" width="150">
+            <h3>${item.product_name}</h3>
             <p>Rp ${item.price.toLocaleString('id-ID')}</p>
             <div>
                 <button class="cart-btn">
@@ -79,12 +81,19 @@ function renderProducts(data, containerId) {
 }
 
 
-if (typeof keyboards !== "undefined") {
-    renderProducts(keyboards, "keyboard-list");
-    renderProducts(mouses, "mouse-list");
-    renderProducts(monitors, "monitor-list");
-    renderProducts(desks, "desk-list");
-    renderProducts(headphones, "headphone-list");
-    renderProducts(chairs, "chair-list");
-    renderProducts(accessories, "accessories-list");
+//bagian load data product dri api / db
+
+async function loadProductsByCategory(category, containerId) {
+    const response = await fetch(`/projek-uas/getProducts.php?category=${category}`);
+    const data = await response.json();
+    renderProducts(data, containerId);
 }
+
+
+loadProductsByCategory("Keyboard", "keyboard-list");
+loadProductsByCategory("Mouse", "mouse-list");
+loadProductsByCategory("Monitor", "monitor-list");
+loadProductsByCategory("Headphone", "headphone-list");
+loadProductsByCategory("Desk", "desk-list");
+loadProductsByCategory("Chair", "chair-list");
+loadProductsByCategory("other", "accessories-list");

@@ -28,7 +28,6 @@ if (yearSpan) {
 
 
 
-// SCRIPT KHUSUS PRODUCT PAGE (Dijalankan hanya jika elemen ada)
 if (document.querySelector('.categories')) {
 
     const category = document.querySelector('.categories');
@@ -61,7 +60,6 @@ if (document.querySelector('.categories')) {
 
 
 
-// RENDER PRODUK (Aman, hanya jalan jika elemennya ada)
 function renderProducts(data, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -81,7 +79,6 @@ function renderProducts(data, containerId) {
 }
 
 
-// Jalankan render hanya jika data dan element ada
 if (typeof keyboards !== "undefined") {
     renderProducts(keyboards, "keyboard-list");
     renderProducts(mouses, "mouse-list");

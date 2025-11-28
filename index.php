@@ -1,16 +1,10 @@
 <?php include 'includes/meta.php'; ?>
 <?php include 'includes/header.php'; ?>
-<?php
-    session_destroy();
-?>
-
-
-
 
     <main class="container-home">
 
         <section class="section-hero">
-            <h1><span class="gear">TechGear</span> Store</h1>
+            <h1><span class="gear">Mufatech</span> Gear</h1>
             <p>Gear up your dream desk.</p>
             <div class="cta-buttons">
                 <a href="pages/product.php" class="btn btn-primary">Gear Up Now</a>
@@ -20,8 +14,8 @@
 
         <section class="section-about">
             <div class="about">
-                <h2>Tentang <span class="gear">TechGear</span></h2>
-                <p>TechGear adalah toko penyedia aksesoris lengkap untuk setup komputer yang lebih keren.
+                <h2>Tentang <span class="gear">Mufatech</span></h2>
+                <p>Mufatech adalah toko penyedia aksesoris lengkap untuk setup komputer yang lebih keren.
                     Kami menyediakan berbagai produk mulai dari keyboard membrane dn mechanical, mouse gaming wired dan
                     wireless, monitor 4k, hingga setup meja dan kursi gaming.
                 </p>
@@ -29,7 +23,7 @@
         </section>
 
         <section class="section-features">
-            <h2>Kenapa Pilih <span class="gear">TechGear</span></h2>
+            <h2>Kenapa Pilih <span class="gear">Mufatech</span></h2>
             <div class="features">
                 <div class="feature">
                     <i class="fa-solid fa-microchip"></i>

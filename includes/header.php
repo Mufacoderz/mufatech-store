@@ -6,7 +6,7 @@ session_start();
     <nav>
         <h1>
             <a href="index.php">
-                <span class="tech">Tech</span><span class="gear">Gear</span>
+                <span class="tech">Mufatech</span><span class="gear"> Gear</span>
             </a>
         </h1>
 

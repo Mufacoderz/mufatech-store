@@ -7,8 +7,8 @@
                 <h2>Hubungi Kami</h2>
                 <p>Jangan ragu hubungi kami jika ada pertanyaan, keluhan atau hal lainnya</p>
                 <div class="social-media">
-                    <p><i class="fa-brands fa-instagram"></i> @techgearstore</p>
-                    <p><i class="fa-regular fa-envelope"></i> techgearstore@gmail.com</p>
+                    <p><i class="fa-brands fa-instagram"></i> @mufatechgear</p>
+                    <p><i class="fa-regular fa-envelope"></i> mufatechgear@gmail.com</p>
                     <p><i class="fa-brands fa-whatsapp"></i> +62 857 5342 1213</p>
                     <p><i class="fa-solid fa-location-dot"></i> Jln. Gerbang Dayaku, Kutai Kartanegara, Kalimantan Timur, Indonesia</p>
                 </div>

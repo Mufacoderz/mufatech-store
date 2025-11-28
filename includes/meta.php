@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechGear Store</title>
+    <title>Mufatech Gear</title>
     <link rel="icon" href="/projek-uas/assets/img/icon.png">
 
     <!--link css - cdn -->

@@ -13,7 +13,7 @@ include 'metaAdmin.php';
         <div class="form-container">
             <h2>Tambah Produk</h2>
 
-            <form action="saveProduct.php" method="POST" enctype="multipart/form-data" class="product-form">
+            <form action="../../controller/saveProduct.php" method="POST" enctype="multipart/form-data" class="product-form">
 
                 <div class="form-group">
                     <label>Nama Produk</label>

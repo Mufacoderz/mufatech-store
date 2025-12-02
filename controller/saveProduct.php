@@ -26,7 +26,7 @@ if (!isset($folderMap[$category])) {
     die("Kategori tidak valid!");
 }
 
-$targetFolder = "../../assets/img/products/" . $folderMap[$category] . "/";
+$targetFolder = "../assets/img/products/" . $folderMap[$category] . "/";
 
 if (!is_dir($targetFolder)) {
     die("Folder untuk kategori ini tidak ditemukan! Upload dibatalkan.");
@@ -63,7 +63,7 @@ $query = "
 if (mysqli_query($conn, $query)) {
     echo "<script>
             alert('Produk berhasil ditambahkan!');
-            window.location='products.php';
+            window.location='../pages/admin/products.php';
             </script>";
 } else {
     echo "Database Error: " . mysqli_error($conn);

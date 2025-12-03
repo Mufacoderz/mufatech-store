@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
 
         <section class="cards">
             <div class="card">
-                <h3>Total Pengguna</h3>
+                <h3>Stok Produk</h3>
                 <p>120</p>
             </div>
             <div class="card">
@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
                 <p>45</p>
             </div>
             <div class="card">
-                <h3>Total Galeri</h3>
+                <h3>Total Pelanggan</h3>
                 <p>82</p>
             </div>
         </section>

@@ -1,0 +1,24 @@
+.cards-pesanan {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-pesanan {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    width: 300px;
+    transition: 0.3s ease;
+}
+
+.card-pesanan:hover {
+    transform: translateY(-7px);
+    background: rgba(34, 211, 238, 0.06);
+    box-shadow: 0 0 18px rgba(34, 211, 238, 0.4);
+}

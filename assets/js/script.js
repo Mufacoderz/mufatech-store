@@ -84,7 +84,7 @@ function renderProducts(data, containerId) {
 //bagian load data product dri api / db
 
 async function loadProductsByCategory(category, containerId) {
-    const response = await fetch(`/projek-uas/getProducts.php?category=${category}`);
+    const response = await fetch(`/projek-uas/controller/getProducts.php?category=${category}`);
     const data = await response.json();
     renderProducts(data, containerId);
 }

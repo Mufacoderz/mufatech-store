@@ -30,6 +30,9 @@ if (yearSpan) {
 
 if (document.querySelector('.categories')) {
 
+        AOS.init();
+
+
     const category = document.querySelector('.categories');
     const openCategory = document.querySelector('.openCategory');
     const closeCategory = document.querySelector('.closeCategory');
@@ -67,7 +70,7 @@ function renderProducts(data, containerId) {
     if (!container) return;
 
     container.innerHTML = data.map(item => `
-        <div class="product-card">
+        <div class="product-card" data-aos="fade-up" data-aos-offset="300">
             <img src="${item.image}" alt="${item.product_name}" width="150">
             <h3>${item.product_name}</h3>
             <p>Rp ${Number(item.price).toLocaleString('id-ID')}</p>

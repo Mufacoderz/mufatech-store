@@ -22,12 +22,15 @@ if (open && close && sidebar) {
 
 //bagian render
 
+        AOS.init();
+
+
 function renderProducts(data, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
     container.innerHTML = data.map(item => `
-        <div class="admin-product-card">
+        <div class="admin-product-card" data-aos="fade-left">
             <div class="button">
                 <button><i class="fa-solid fa-xmark delete"></i></button>
                 <button><i class="fa-regular fa-pen-to-square edit"></i></i></button>

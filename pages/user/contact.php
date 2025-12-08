@@ -1,5 +1,5 @@
-<?php include '../includes/meta.php'; ?>
-<?php include '../includes/header.php'; ?>
+<?php include '../../includes/meta.php'; ?>
+<?php include '../../includes/header.php'; ?>
 
     <main class="container-contact">
         <section class="section-contact">
@@ -24,5 +24,5 @@
     </main>
 
 
-<?php include '../includes/footer.php'; ?>
+<?php include '../../includes/footer.php'; ?>
 

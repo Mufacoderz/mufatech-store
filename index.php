@@ -7,8 +7,8 @@
             <h1><span class="gear">Mufatech</span> Store</h1>
             <p>Gear up your dream desk.</p>
             <div class="cta-buttons">
-                <a href="pages/product.php" class="btn btn-primary">Gear Up Now</a>
-                <a href="pages/ideas.php" class="btn btn-outline">Find Your Style</a>
+                <a href="pages/user/product.php" class="btn btn-primary">Gear Up Now</a>
+                <a href="pages/user/ideas.php" class="btn btn-outline">Find Your Style</a>
             </div>
         </section>
 

@@ -1,5 +1,5 @@
-<?php include '../includes/meta.php'; ?>
-<?php include '../includes/header.php'; ?>
+<?php include '../../includes/meta.php'; ?>
+<?php include '../../includes/header.php'; ?>
 
 
     <main class="container-ideas">
@@ -8,7 +8,7 @@
             <div class="ideas-list">
                 <div class="ideas-card">
                     <div class="image-idea">
-                        <img src="../assets/img/ideas/neon-style.webp" alt="neon setup">
+                        <img src="../../assets/img/ideas/neon-style.webp" alt="neon setup">
                     </div>
                     <div class="desc-idea">
                         <h3 class="gear">Neon Gamer Setup</h3>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="ideas-card">
                     <div class="image-idea">
-                        <img src="../assets/img/ideas/minimalis-style.webp" alt="minimals setup">
+                        <img src="../../assets/img/ideas/minimalis-style.webp" alt="minimals setup">
                     </div>
                     <div class="desc-idea">
                         <h3 class="gear">Minimalist Setup</h3>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="ideas-card">
                     <div class="image-idea">
-                        <img src="../assets/img/ideas/dark-style.webp" alt="dark setup">
+                        <img src="../../assets/img/ideas/dark-style.webp" alt="dark setup">
                     </div>
                     <div class="desc-idea">
                         <h3 class="gear">Dark Elegant Setup</h3>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="ideas-card">
                     <div class="image-idea">
-                        <img src="../assets/img/ideas/green-style.webp" alt="green steup">
+                        <img src="../../assets/img/ideas/green-style.webp" alt="green steup">
                     </div>
                     <div class="desc-idea">
                         <h3 class="gear">Green Eco Setup</h3>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="ideas-card">
                     <div class="image-idea">
-                        <img src="../assets/img/ideas/artwave-style.webp" alt="artwave setup">
+                        <img src="../../assets/img/ideas/artwave-style.webp" alt="artwave setup">
                     </div>
                     <div class="desc-idea">
                         <h3 class="gear">Artwave RGB Setup</h3>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="ideas-card">
                     <div class="image-idea">
-                        <img src="../assets/img/ideas/music-style.webp" alt="Productivity setup">
+                        <img src="../../assets/img/ideas/music-style.webp" alt="Productivity setup">
                     </div>
                     <div class="desc-idea">
                         <h3 class="gear">Productivity Setup</h3>
@@ -76,4 +76,4 @@
         </section>
     </main>
 
-<?php include '../includes/footer.php'; ?>
+<?php include '../../includes/footer.php'; ?>

@@ -12,9 +12,9 @@ session_start();
 
         <ul class="nav-list">
             <li><a href="/projek-uas/index.php">Beranda</a></li>
-            <li><a href="/projek-uas/pages/product.php">Produk</a></li>
-            <li><a href="/projek-uas/pages/ideas.php">Ide Setup</a></li>
-            <li><a href="/projek-uas/pages/contact.php">Kontak</a></li>
+            <li><a href="/projek-uas/pages/user/product.php">Produk</a></li>
+            <li><a href="/projek-uas/pages/user/ideas.php">Ide Setup</a></li>
+            <li><a href="/projek-uas/pages/user/contact.php">Kontak</a></li>
         </ul>
 
         <div class="nav-right">

@@ -11,6 +11,10 @@ if(!$conn){
     die("Koneksi gagal: ". mysqli_connect_error());
 };
 
+if (!defined("ROOT_URL")) {
+    define("ROOT_URL", "/projek-uas/");
+}
+
 
 // echo "Berhasil koneksi"
 

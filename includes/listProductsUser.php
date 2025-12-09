@@ -20,7 +20,7 @@ $lists = [
     "Headphone" => [],
     "Desk" => [],
     "Chair" => [],
-    "Others" => []
+    "Other" => []
 ];
 
 // Masukkan produk ke kategori masing-masing
@@ -41,7 +41,7 @@ $folderMap = [
     "Headphone" => "headphones",
     "Desk" => "desks",
     "Chair" => "chairs",
-    "Others" => "other"
+    "Other" => "other"
 ];
 
 

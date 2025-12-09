@@ -7,11 +7,11 @@ if (!isset($_SESSION['user_id'])) {
 
 include '../../config/koneksi.php';
 
+// Ambil semua kategori
 $kategori = mysqli_query($conn, "SELECT * FROM categories");
 ?>
 
-<?php include 'metaAdmin.php';?>
-
+<?php include 'metaAdmin.php'; ?>
 <?php include 'sidebar.php'; ?>
 
 <div class="main-content">
@@ -55,29 +55,29 @@ $kategori = mysqli_query($conn, "SELECT * FROM categories");
 
 </div>
 
-
 <?php
 
+// ========== PROSES TAMBAH PRODUK ==========
 if (isset($_POST['simpan'])) {
 
-    $name = $_POST['name'];
-    $price = $_POST['price'];
-    $category_id = $_POST['category_id'];
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $price = mysqli_real_escape_string($conn, $_POST['price']);
+    $category_id = mysqli_real_escape_string($conn, $_POST['category_id']);
 
-    // Ambil nama kategori berdasarkan id
+    // Ambil nama kategori berdasarkan ID
     $catQuery = mysqli_query($conn, "SELECT name FROM categories WHERE id='$category_id' LIMIT 1");
     $catData = mysqli_fetch_assoc($catQuery);
     $categoryName = $catData['name'];
 
-    // Mapping nama folder upload
+    // Pemetaan kategori -> folder
     $folderMap = [
-        "Keyboard" => "keyboard",
-        "Mouse" => "mouse",
-        "Monitor" => "monitor",
+        "Keyboard"  => "keyboard",
+        "Mouse"     => "mouse",
+        "Monitor"   => "monitor",
         "Headphone" => "headphone",
-        "Desk" => "desk",
-        "Chair" => "chair",
-        "Other" => "other"
+        "Desk"      => "desk",
+        "Chair"     => "chair",
+        "Other"     => "other"
     ];
 
     // Validasi kategori
@@ -85,24 +85,29 @@ if (isset($_POST['simpan'])) {
         die("Kategori tidak valid!");
     }
 
+    // Folder tujuan upload
     $targetFolder = "../../uploads/" . $folderMap[$categoryName] . "/";
 
+    // Jika folder belum ada -> buat
     if (!is_dir($targetFolder)) {
         mkdir($targetFolder, 0777, true);
     }
 
-    // Upload file
+    // Upload gambar
     $foto = $_FILES['image']['name'];
     $tmp = $_FILES['image']['tmp_name'];
 
+    // Buat nama file baru unik
     $fotoBaru = uniqid() . "_" . $foto;
 
     if (!move_uploaded_file($tmp, $targetFolder . $fotoBaru)) {
         die("Upload gagal! Periksa permission folder.");
     }
 
+    // Path yang disimpan ke database
     $publicPath = "/projek-uas/uploads/" . $folderMap[$categoryName] . "/" . $fotoBaru;
 
+    // Simpan ke database
     $query = "
         INSERT INTO products (name, price, image, category_id)
         VALUES ('$name', '$price', '$publicPath', '$category_id')
@@ -111,8 +116,8 @@ if (isset($_POST['simpan'])) {
     if (mysqli_query($conn, $query)) {
         echo "<script>
                 alert('Produk berhasil ditambahkan!');
-                window.location='products.php';
-            </script>";
+                window.location='manajemenProducts.php';
+                </script>";
     } else {
         echo "Database Error: " . mysqli_error($conn);
     }

@@ -20,7 +20,7 @@ $lists = [
     "Headphone" => [],
     "Desk" => [],
     "Chair" => [],
-    "Others" => []
+    "Other" => []
 ];
 
 // Masukkan produk ke kategori masing-masing
@@ -41,7 +41,7 @@ $folderMap = [
     "Headphone" => "headphones",
     "Desk" => "desks",
     "Chair" => "chairs",
-    "Others" => "other"
+    "Other" => "other"
 ];
 
 
@@ -99,7 +99,7 @@ function renderItems($items, $id, $title, $basePath, $folderMap)
     renderItems($lists["Headphone"], "headphone-list", "Headphone", $basePath, $folderMap);
     renderItems($lists["Desk"], "desk-list", "Desk", $basePath, $folderMap);
     renderItems($lists["Chair"], "chair-list", "Chair", $basePath, $folderMap);
-    renderItems($lists["Other"], "accessories-list", "Others", $basePath, $folderMap);
+    renderItems($lists["Other"], "accessories-list", "Other", $basePath, $folderMap);
     ?>
 
     <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>

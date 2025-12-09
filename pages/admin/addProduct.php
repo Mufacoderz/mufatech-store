@@ -1,57 +1,53 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin_id'])) {
+if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
 
 include '../../config/koneksi.php';
 
-// Ambil semua kategori dari DB
 $kategori = mysqli_query($conn, "SELECT * FROM categories");
 ?>
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Produk</title>
-    <link rel="stylesheet" href="../../assets/css/adminStyles.css">
-</head>
-<body>
+<?php include 'metaAdmin.php';?>
 
 <?php include 'sidebar.php'; ?>
 
 <div class="main-content">
 
     <section class="cards">
-        <div class="card">
+        <div class="card form-container">
+
             <h2>Tambah Produk</h2>
 
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data" class="product-form">
 
-                <label>Nama Produk</label>
-                <input type="text" name="name" placeholder="Masukkan nama produk" required>
-                <br><br>
+                <div class="form-group">
+                    <label>Nama Produk</label>
+                    <input type="text" name="name" placeholder="Masukkan nama produk" required>
+                </div>
 
-                <label>Harga Produk</label>
-                <input type="number" name="price" placeholder="Masukkan harga tanpa titik" required>
-                <br><br>
+                <div class="form-group">
+                    <label>Harga Produk</label>
+                    <input type="number" name="price" placeholder="Masukkan harga tanpa titik" required>
+                </div>
 
-                <label>Kategori</label>
-                <select name="category_id" required>
-                    <?php while ($row = mysqli_fetch_assoc($kategori)) { ?>
-                        <option value="<?= $row['id']; ?>"><?= $row['name']; ?></option>
-                    <?php } ?>
-                </select>
-                <br><br>
+                <div class="form-group">
+                    <label>Kategori</label>
+                    <select name="category_id" required>
+                        <?php while ($row = mysqli_fetch_assoc($kategori)) { ?>
+                            <option value="<?= $row['id']; ?>"><?= $row['name']; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
 
-                <label>Upload Gambar</label>
-                <input type="file" name="image" accept="image/*" required>
-                <br><br>
+                <div class="form-group">
+                    <label>Upload Gambar</label>
+                    <input type="file" name="image" accept="image/*" required>
+                </div>
 
-                <button type="submit" name="simpan">Simpan</button>
+                <button type="submit" name="simpan" class="btn-submit">Simpan</button>
 
             </form>
         </div>
@@ -59,10 +55,9 @@ $kategori = mysqli_query($conn, "SELECT * FROM categories");
 
 </div>
 
+
 <?php
-// ========================
-//  PROSES SIMPAN PRODUK
-// ========================
+
 if (isset($_POST['simpan'])) {
 
     $name = $_POST['name'];
@@ -90,10 +85,8 @@ if (isset($_POST['simpan'])) {
         die("Kategori tidak valid!");
     }
 
-    // Folder upload baru
     $targetFolder = "../../uploads/" . $folderMap[$categoryName] . "/";
 
-    // Jika folder belum ada → buat otomatis
     if (!is_dir($targetFolder)) {
         mkdir($targetFolder, 0777, true);
     }
@@ -102,18 +95,14 @@ if (isset($_POST['simpan'])) {
     $foto = $_FILES['image']['name'];
     $tmp = $_FILES['image']['tmp_name'];
 
-    // Nama file unik
     $fotoBaru = uniqid() . "_" . $foto;
 
-    // Proses upload
     if (!move_uploaded_file($tmp, $targetFolder . $fotoBaru)) {
         die("Upload gagal! Periksa permission folder.");
     }
 
-    // Public path yang disimpan ke database
     $publicPath = "/projek-uas/uploads/" . $folderMap[$categoryName] . "/" . $fotoBaru;
 
-    // Query insert
     $query = "
         INSERT INTO products (name, price, image, category_id)
         VALUES ('$name', '$price', '$publicPath', '$category_id')

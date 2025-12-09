@@ -18,11 +18,11 @@ if (!isset($_SESSION['user_id'])) {
     <div class="main-content" id="top">
         <div class="add-product">
             <h3>Tambah produk</h3>
-            <a class="add-product-btn" href="addProduct.php">
+            <a class="add-product-btn" href="/projek-uas/pages/admin/addProduct.php">
                 <p>+</p>
             </a>
         </div>
-        <?php include __DIR__ . '/../../includes/listProducts.php'; ?>
+        <?php include __DIR__ . '/../../includes/listProductsAdmin.php'; ?>
     </div>
 
 

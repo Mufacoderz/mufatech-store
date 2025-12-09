@@ -2,7 +2,7 @@
 
 $basePath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? "../../" : "../";
 
-include $basePath . "../config/koneksi.php";
+include __DIR__ . "/../config/koneksi.php";
 
 $query = "
     SELECT products.*, categories.name AS category_name
@@ -13,7 +13,6 @@ $query = "
 
 $result = mysqli_query($conn, $query);
 
-// Kategori → Array
 $lists = [
     "Keyboard" => [],
     "Mouse" => [],
@@ -64,13 +63,26 @@ function renderItems($items, $id, $title, $basePath, $folderMap)
         // echo "<p style='color:red'>DEBUG PATH: $imageFull</p>";
 
         echo "
-    <div class='product-card'>
-        <img src='$imageFull' alt='{$p['name']}'>
-        <h3>{$p['name']}</h3>
-        <p>Rp " . number_format($p['price'], 0, ',', '.') . "</p>
-        <button class='cart-btn'>Add to Cart</button>
+    <div class='admin-product-card'>
+        <img src='" . $imageFull . "' alt='" . $p['name'] . "'>
+
+        <div class='admin-product-info'>
+            <h3>" . $p['name'] . "</h3>
+            <p class='price'>Rp " . number_format($p['price'], 0, ',', '.') . "</p>
+        </div>
+
+        <div class='button'>
+            <button class='edit'>
+                <i class='fa-solid fa-pen'></i>
+            </button>
+
+            <button class='delete'>
+                <i class='fa-solid fa-trash'></i>
+            </button>
+        </div>
     </div>
 ";
+
     }
 
     echo "</div>";
@@ -87,7 +99,7 @@ function renderItems($items, $id, $title, $basePath, $folderMap)
     renderItems($lists["Headphone"], "headphone-list", "Headphone", $basePath, $folderMap);
     renderItems($lists["Desk"], "desk-list", "Desk", $basePath, $folderMap);
     renderItems($lists["Chair"], "chair-list", "Chair", $basePath, $folderMap);
-    renderItems($lists["Others"], "accessories-list", "Others", $basePath, $folderMap);
+    renderItems($lists["Other"], "accessories-list", "Others", $basePath, $folderMap);
     ?>
 
     <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>

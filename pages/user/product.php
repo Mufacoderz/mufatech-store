@@ -30,7 +30,7 @@
         </section>
 
         
-        <?php include '../../includes/listProductsUser.php'; ?>
+        <?php include '../../controllers/getProductsUser.php'; ?>
         
     </main>
     

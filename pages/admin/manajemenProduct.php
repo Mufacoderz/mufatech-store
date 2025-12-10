@@ -18,10 +18,7 @@ if (!isset($_SESSION['user_id'])) {
 
 <?php if (isset($_GET['status'])): ?>
 
-    <?php if ($_GET['status'] == 'success'): ?>
-        <script>alert("Produk berhasil dihapus!");</script>
-
-    <?php elseif ($_GET['status'] == 'error'): ?>
+    <?php if ($_GET['status'] == 'error'): ?>
         <script>alert("Gagal menghapus produk!");</script>
     <?php endif; ?>
 
@@ -32,11 +29,11 @@ if (!isset($_SESSION['user_id'])) {
     <div class="main-content" id="top">
         <div class="add-product">
             <h3>Tambah produk</h3>
-            <a class="add-product-btn" href="/projek-uas/pages/admin/addProduct.php">
+            <a class="add-product-btn" href="/projek-uas/pages/admin/tambahProduct.php">
                 <p>+</p>
             </a>
         </div>
-        <?php include __DIR__ . '/../../includes/listProductsAdmin.php'; ?>
+        <?php include __DIR__ . '/../../controllers/getProductsAdmin.php'; ?>
     </div>
 
 

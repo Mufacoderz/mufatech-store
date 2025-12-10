@@ -5,21 +5,21 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include '../../config/koneksi.php';
+include '../config/koneksi.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $query = "DELETE FROM products WHERE id = '$id'";
 
     if (mysqli_query($conn, $query)) {
-        header("Location: manajemenProduct.php?status=success");
+        header("Location: ../pages/admin/manajemenProduct.php?");
         exit();
     } else {
-        header("Location: manajemenProduct.php?status=error");
+        header("Location: ../pages/admin/manajemenProduct.php?status=error");
         exit();
     }
 
 } else {
-    header("Location: manajemenProduct.php?status=error");
+    header("Location: ../pages/admin/manajemenProduct.php?status=error");
     exit();
 }

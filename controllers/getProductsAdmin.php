@@ -7,7 +7,7 @@ $query = "
     SELECT products.*, categories.name AS category_name
     FROM products
     LEFT JOIN categories ON products.category_id = categories.id
-    ORDER BY products.id DESC
+    ORDER BY products.id ASC
 ";
 
 $result = mysqli_query($conn, $query);
@@ -22,7 +22,7 @@ $lists = [
     "Other" => []
 ];
 
-// Masukkan produk ke kategori masing2
+// Masukkan produk ke kategori masing-masing
 while ($row = mysqli_fetch_assoc($result)) {
     $cat = ucfirst($row['category_name']);
 
@@ -32,7 +32,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $lists[$cat][] = $row;
 }
 
-// atur kategori ke nma folder
+// Map kategori → nama folder
 $folderMap = [
     "Keyboard" => "keyboards",
     "Mouse" => "mouses",
@@ -59,17 +59,31 @@ function renderItems($items, $id, $title, $folderMap)
 
         $imageFull = "../../uploads/$folder/$filename";
 
-
         // echo "<p style='color:red'>DEBUG PATH: $imageFull</p>";
 
         echo "
-            <div class='product-card'>
-                <img src='$imageFull' alt='{$p['name']}'>
-                <h3>{$p['name']}</h3>
-                <p>Rp " . number_format($p['price'], 0, ',', '.') . "</p>
-                <button class='cart-btn'>Add to Cart</button>
-            </div>
-        ";
+    <div class='admin-product-card'>
+        <img src='" . $imageFull . "' alt='" . $p['name'] . "'>
+
+        <div class='admin-product-info'>
+            <h3>" . $p['name'] . "</h3>
+            <p class='price'>Rp " . number_format($p['price'], 0, ',', '.') . "</p>
+        </div>
+
+        <div class='button'>
+            <a class='edit'>
+                <i class='fa-solid fa-pen'></i>
+            </a>
+
+            <a class='delete' href='../../controllers/deleteProduct.php?id={$p['id']}'
+                onclick=\"return confirm('Hapus produk ini?')\">
+                <i class='fa-solid fa-trash'></i>
+            </a>
+
+
+        </div>
+    </div>
+";
     }
 
     echo "</div>";

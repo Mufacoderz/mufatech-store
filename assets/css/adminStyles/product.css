@@ -70,24 +70,26 @@ h1,h2,h3 {
     gap: 8px;
 }
 
-.admin-product-card .button button {
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
-    border: 1px solid #333;
-    background: #141414;
+.admin-product-card .button a {
+    width: 35px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #2a2a2a;
+    border-radius: 6px;
     cursor: pointer;
     transition: 0.25s;
-    font-size: 16px;
+    font-size: 18px;
+    text-decoration: none;
+    border: 1px solid #333;
 }
 
-.admin-product-card .button button:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+.admin-product-card .button a:hover {
+    background: #3a3a3a;
+    transform: scale(1.1);
 }
+
 
 .admin-product-card .button .edit {
     color: #05ff05;

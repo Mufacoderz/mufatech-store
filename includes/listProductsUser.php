@@ -1,6 +1,5 @@
 <?php
 
-$basePath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? "../../" : "../";
 
 include __DIR__ . "/../config/koneksi.php";
 
@@ -23,7 +22,7 @@ $lists = [
     "Other" => []
 ];
 
-// Masukkan produk ke kategori masing-masing
+// Masukkan produk ke kategori masing2
 while ($row = mysqli_fetch_assoc($result)) {
     $cat = ucfirst($row['category_name']);
 
@@ -33,7 +32,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $lists[$cat][] = $row;
 }
 
-// Map kategori → nama folder
+// atur kategori ke nma folder
 $folderMap = [
     "Keyboard" => "keyboards",
     "Mouse" => "mouses",
@@ -46,7 +45,7 @@ $folderMap = [
 
 
 
-function renderItems($items, $id, $title, $basePath, $folderMap)
+function renderItems($items, $id, $title, $folderMap)
 {
 
     echo "<h2>$title</h2>";
@@ -58,18 +57,19 @@ function renderItems($items, $id, $title, $basePath, $folderMap)
 
         $filename = basename($p['image']);
 
-        $imageFull = ROOT_URL . "uploads/$folder/$filename";
+        $imageFull = "../../uploads/$folder/$filename";
+
 
         // echo "<p style='color:red'>DEBUG PATH: $imageFull</p>";
 
         echo "
-    <div class='product-card'>
-        <img src='$imageFull' alt='{$p['name']}'>
-        <h3>{$p['name']}</h3>
-        <p>Rp " . number_format($p['price'], 0, ',', '.') . "</p>
-        <button class='cart-btn'>Add to Cart</button>
-    </div>
-";
+            <div class='product-card'>
+                <img src='$imageFull' alt='{$p['name']}'>
+                <h3>{$p['name']}</h3>
+                <p>Rp " . number_format($p['price'], 0, ',', '.') . "</p>
+                <button class='cart-btn'>Add to Cart</button>
+            </div>
+        ";
     }
 
     echo "</div>";
@@ -80,13 +80,13 @@ function renderItems($items, $id, $title, $basePath, $folderMap)
 <section class="list-product-section">
 
     <?php
-    renderItems($lists["Keyboard"], "keyboard-list", "Keyboard", $basePath, $folderMap);
-    renderItems($lists["Mouse"], "mouse-list", "Mouse", $basePath, $folderMap);
-    renderItems($lists["Monitor"], "monitor-list", "Monitor", $basePath, $folderMap);
-    renderItems($lists["Headphone"], "headphone-list", "Headphone", $basePath, $folderMap);
-    renderItems($lists["Desk"], "desk-list", "Desk", $basePath, $folderMap);
-    renderItems($lists["Chair"], "chair-list", "Chair", $basePath, $folderMap);
-    renderItems($lists["Other"], "accessories-list", "Others", $basePath, $folderMap);
+    renderItems($lists["Keyboard"], "keyboard-list", "Keyboard", $folderMap);
+    renderItems($lists["Mouse"], "mouse-list", "Mouse", $folderMap);
+    renderItems($lists["Monitor"], "monitor-list", "Monitor", $folderMap);
+    renderItems($lists["Headphone"], "headphone-list", "Headphone", $folderMap);
+    renderItems($lists["Desk"], "desk-list", "Desk", $folderMap);
+    renderItems($lists["Chair"], "chair-list", "Chair", $folderMap);
+    renderItems($lists["Other"], "accessories-list", "Other", $folderMap);
     ?>
 
     <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>

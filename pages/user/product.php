@@ -1,6 +1,6 @@
 <?php include '../../includes/meta.php'; ?>
 <?php include '../../includes/header.php'; ?>
-<?php include'../../config/koneksi.php'; ?>
+<?php include '../../config/koneksi.php'; ?>
 
 
 

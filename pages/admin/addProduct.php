@@ -116,7 +116,7 @@ if (isset($_POST['simpan'])) {
     if (mysqli_query($conn, $query)) {
         echo "<script>
                 alert('Produk berhasil ditambahkan!');
-                window.location='manajemenProducts.php';
+                window.location='manajemenProduct.php';
                 </script>";
     } else {
         echo "Database Error: " . mysqli_error($conn);

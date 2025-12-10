@@ -14,6 +14,20 @@ if (!isset($_SESSION['user_id'])) {
 <body>
 <?php include 'sidebar.php'; ?>
 
+<!-- buat popup berhasul dan gagal hpus produk -->
+
+<?php if (isset($_GET['status'])): ?>
+
+    <?php if ($_GET['status'] == 'success'): ?>
+        <script>alert("Produk berhasil dihapus!");</script>
+
+    <?php elseif ($_GET['status'] == 'error'): ?>
+        <script>alert("Gagal menghapus produk!");</script>
+    <?php endif; ?>
+
+<?php endif; ?>
+
+
 
     <div class="main-content" id="top">
         <div class="add-product">

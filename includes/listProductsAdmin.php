@@ -1,6 +1,5 @@
 <?php
 
-$basePath = (strpos($_SERVER['PHP_SELF'], '/admin/') !== false) ? "../../" : "../";
 
 include __DIR__ . "/../config/koneksi.php";
 
@@ -46,7 +45,7 @@ $folderMap = [
 
 
 
-function renderItems($items, $id, $title, $basePath, $folderMap)
+function renderItems($items, $id, $title, $folderMap)
 {
 
     echo "<h2>$title</h2>";
@@ -58,7 +57,7 @@ function renderItems($items, $id, $title, $basePath, $folderMap)
 
         $filename = basename($p['image']);
 
-        $imageFull = ROOT_URL . "uploads/$folder/$filename";
+        $imageFull = "../../uploads/$folder/$filename";
 
         // echo "<p style='color:red'>DEBUG PATH: $imageFull</p>";
 
@@ -72,17 +71,19 @@ function renderItems($items, $id, $title, $basePath, $folderMap)
         </div>
 
         <div class='button'>
-            <button class='edit'>
+            <a class='edit'>
                 <i class='fa-solid fa-pen'></i>
-            </button>
+            </a>
 
-            <button class='delete'>
+            <a class='delete' href='deleteProduct.php?id={$p['id']}'
+                onclick=\"return confirm('Hapus produk ini?')\">
                 <i class='fa-solid fa-trash'></i>
-            </button>
+            </a>
+
+
         </div>
     </div>
 ";
-
     }
 
     echo "</div>";
@@ -93,13 +94,13 @@ function renderItems($items, $id, $title, $basePath, $folderMap)
 <section class="list-product-section">
 
     <?php
-    renderItems($lists["Keyboard"], "keyboard-list", "Keyboard", $basePath, $folderMap);
-    renderItems($lists["Mouse"], "mouse-list", "Mouse", $basePath, $folderMap);
-    renderItems($lists["Monitor"], "monitor-list", "Monitor", $basePath, $folderMap);
-    renderItems($lists["Headphone"], "headphone-list", "Headphone", $basePath, $folderMap);
-    renderItems($lists["Desk"], "desk-list", "Desk", $basePath, $folderMap);
-    renderItems($lists["Chair"], "chair-list", "Chair", $basePath, $folderMap);
-    renderItems($lists["Other"], "accessories-list", "Other", $basePath, $folderMap);
+    renderItems($lists["Keyboard"], "keyboard-list", "Keyboard", $folderMap);
+    renderItems($lists["Mouse"], "mouse-list", "Mouse", $folderMap);
+    renderItems($lists["Monitor"], "monitor-list", "Monitor", $folderMap);
+    renderItems($lists["Headphone"], "headphone-list", "Headphone", $folderMap);
+    renderItems($lists["Desk"], "desk-list", "Desk", $folderMap);
+    renderItems($lists["Chair"], "chair-list", "Chair", $folderMap);
+    renderItems($lists["Other"], "accessories-list", "Other", $folderMap);
     ?>
 
     <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>

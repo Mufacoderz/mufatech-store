@@ -33,7 +33,9 @@ if (!isset($_SESSION['user_id'])) {
                 <p>+</p>
             </a>
         </div>
-        <?php include __DIR__ . '/../../controllers/getProductsAdmin.php'; ?>
+        <div class="list-product">
+            <?php include __DIR__ . '/../../controllers/getProductsAdmin.php'; ?>
+        </div>
     </div>
 
 

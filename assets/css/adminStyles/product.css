@@ -43,6 +43,10 @@ h1,h2,h3 {
     transform: scale(2);
 }
 
+.list-product{
+    overflow-x: hidden;
+}
+
 
 .admin-product-card {
     display: flex;

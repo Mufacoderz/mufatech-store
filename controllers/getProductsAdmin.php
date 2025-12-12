@@ -62,7 +62,7 @@ function renderItems($items, $id, $title, $folderMap)
         // echo "<p style='color:red'>DEBUG PATH: $imageFull</p>";
 
         echo "
-    <div class='admin-product-card'>
+    <div class='admin-product-card' data-aos='fade-left'>
         <img src='" . $imageFull . "' alt='" . $p['name'] . "'>
 
         <div class='admin-product-info'>

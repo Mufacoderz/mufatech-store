@@ -1,8 +1,6 @@
     <footer>
         <p>&copy; <span id="year"></span> TechGear</p>
-        <p>
-            <a href="/projek-uas/pages/admin/login.php" class="login">Admin Login</a>
-        </p>
+
     </footer>
 
     <!-- <script src="assets/js/script.js"></script>

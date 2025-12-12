@@ -6,6 +6,17 @@ if (!isset($_SESSION['user_id'])) {
 }
 ?>
 
+<?php
+include '../../config/koneksi.php';
+
+$query = "SELECT COUNT(*) AS total FROM products";
+$result = mysqli_query($conn, $query);
+
+$data = mysqli_fetch_assoc($result);
+$totalProducts = $data['total'];
+
+?>
+
 <?php include'metaAdmin.php';?>
 
 <body>
@@ -26,7 +37,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>
             <div class="card">
                 <h3>Total Produk</h3>
-                <p>45</p>
+                <p><?php echo $totalProducts; ?></p>
             </div>
             <div class="card">
                 <h3>Total Pelanggan</h3>

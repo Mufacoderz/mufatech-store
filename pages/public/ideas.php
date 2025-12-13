@@ -14,7 +14,7 @@
                         <h3 class="gear">Neon Gamer Setup</h3>
                         <p>Setup dengan pencahayaan RGB ungu dan biru yang kuat, memberikan nuansa futuristik khas gamer modern. Kombinasi warna kontras dan cahaya menyala menciptakan suasana intens dan penuh energi</p>
                         <p>Cocok untuk: Gamer dan streamer</p>
-                        <a href="product.html"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
+                        <a href="product.php"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
                     </div>
                 </div>
                 <div class="ideas-card">
@@ -25,7 +25,7 @@
                         <h3 class="gear">Minimalist Setup</h3>
                         <p>Setup dengan pencahayaan RGB ungu dan biru yang kuat, memberikan nuansa futuristik khas gamer modern. Kombinasi warna kontras dan cahaya menyala menciptakan suasana intens dan penuh energi</p>
                         <p>Cocok untuk: Programmer</p>
-                        <a href="product.html"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
+                        <a href="product.php"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
                     </div>
                 </div>
                 <div class="ideas-card">
@@ -36,7 +36,7 @@
                         <h3 class="gear">Dark Elegant Setup</h3>
                         <p>Setup dengan pencahayaan RGB ungu dan biru yang kuat, memberikan nuansa futuristik khas gamer modern. Kombinasi warna kontras dan cahaya menyala menciptakan suasana intens dan penuh energi</p>
                         <p>Cocok untuk: Pekerja kantor dan mahasiswa</p>
-                        <a href="product.html"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
+                        <a href="product.php"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
                     </div>
                 </div>
                 <div class="ideas-card">
@@ -47,7 +47,7 @@
                         <h3 class="gear">Green Eco Setup</h3>
                         <p>Setup dengan pencahayaan RGB ungu dan biru yang kuat, memberikan nuansa futuristik khas gamer modern. Kombinasi warna kontras dan cahaya menyala menciptakan suasana intens dan penuh energi</p>
                         <p>Cocok untuk: Programmer, pekerja kantor</p>
-                        <a href="product.html"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
+                        <a href="product.php"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
                     </div>
                 </div>
                 <div class="ideas-card">
@@ -58,7 +58,7 @@
                         <h3 class="gear">Artwave RGB Setup</h3>
                         <p>Setup dengan pencahayaan RGB ungu dan biru yang kuat, memberikan nuansa futuristik khas gamer modern. Kombinasi warna kontras dan cahaya menyala menciptakan suasana intens dan penuh energi</p>
                         <p>Cocok untuk: Gamer, programmer dan streamer</p>
-                        <a href="product.html"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
+                        <a href="product.php"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
                     </div>
                 </div>
                 <div class="ideas-card">
@@ -69,7 +69,7 @@
                         <h3 class="gear">Productivity Setup</h3>
                         <p>Setup dengan pencahayaan RGB ungu dan biru yang kuat, memberikan nuansa futuristik khas gamer modern. Kombinasi warna kontras dan cahaya menyala menciptakan suasana intens dan penuh energi</p>
                         <p>Cocok untuk: Pemusik, streamer, programmer dan trader</p>
-                        <a href="product.html"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
+                        <a href="product.php"><i class="fa-solid fa-chevron-right"></i>Lihat produk terkait</a>
                     </div>
                 </div>
             </div>

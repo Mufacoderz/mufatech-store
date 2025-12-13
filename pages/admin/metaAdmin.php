@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../assets/css/adminStyles/product.css">
     <link rel="stylesheet" href="../../assets/css/adminStyles/login.css">
     <link rel="stylesheet" href="../../assets/css/adminStyles/global.css">
+    <link rel="stylesheet" href="../../assets/css/adminStyles/dashboard.css">
     <link rel="stylesheet" href="../../assets/css/adminStyles/tambahProduk.css">
     <link rel="stylesheet" href="../../assets/css/adminStyles/pesanan.css">
 

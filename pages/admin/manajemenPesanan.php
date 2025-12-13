@@ -2,13 +2,13 @@
 
 
 
-<?php
-include 'sidebar.php';
-?>
 
 <body>
 
     
+<?php
+include 'sidebar.php';
+?>
 
     <div class="main-content">
         <header>
